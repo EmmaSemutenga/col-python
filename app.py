@@ -72,3 +72,54 @@ for k, j in enumerate(words):
 
 print(list(range(5)))
 print(list(range(-1,10)))#from -1 to 9
+
+#break and continue Statements, and else Clauses on Loops¶
+
+#break statement, like in C, breaks out of the innermost enclosing for or while loop
+
+#using while loop
+a = 4
+b = 10
+while b > 0:
+    while a >1:
+        print(a)
+        if a == 2:
+            print("we are out")
+            break
+        a-=1
+    print("b: ", b)
+    b-=1
+
+#using for loop
+#to output even numbers 
+for num in range(2,10):
+    if num % 2 == 0:
+        print(num, " is even")
+        break
+    else:
+        print(num, " is odd")
+
+#continue statement, continues with the next iteration of the loop:
+for num in range(2,10):
+    if num % 2 == 0:
+        #print(num, " is even")
+        continue
+    else:
+        print(num, " is odd")
+
+#pass Statements
+#It can be used when a statement is required syntactically but the program requires no action
+
+while True:
+    pass #Busy-wait for keyboard interrupt (Ctrl+C)
+
+#This is commonly used for creating minimal classes:
+
+class MyEmptyClass:
+    pass
+
+#Another place pass can be used is as a place-holder for a function or conditional body when you are working on new code, 
+# allowing you to keep thinking at a more abstract level. The pass is silently ignored:
+
+def initlog(*args):
+    pass   # Remember to implement this!
