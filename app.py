@@ -46,3 +46,29 @@ for w in words[:]:#making a copy
     if len(w) > 6:
         words.insert(0, w)
 print(words)
+
+#range() Function
+#iterates over a sequence of numbers
+for i in range(6):#last number(given endpoint) is never part of the sequence
+    print(i)
+
+#let range start from another number
+for n in range(-5, 2):#begins at -5
+    print(n)
+
+for m in range(0, 10, 2):#starts at 0 to 10(not included) in steps of 2
+    print(m)
+
+#To iterate over the indices of a sequence, you can combine range() and len()
+for v in range(len(words)):
+    print(v, words[v])
+
+#In most such cases, however, it is convenient to use the enumerate()
+
+for k, j in enumerate(words):
+    print(k, j)
+
+#The function list() it creates lists from iterables:
+
+print(list(range(5)))
+print(list(range(-1,10)))#from -1 to 9
