@@ -17,3 +17,15 @@ while b < 10:
 #the print function
 i = 256*256
 print('The value of i is', i) 
+
+x = int(input('Please insert number'))
+
+if x < 0:
+    x = 0
+    print("X is negative")
+elif x == 0:
+    print("X is Zero")
+else:
+    print("x is greater than zero")
+
+#An if … elif … elif … sequence is a substitute for the switch or case statements found in other languages
