@@ -15,8 +15,49 @@ print(fib(2000))#will return None
 #The return statement returns with a value from a function. return without an expression 
 #argument returns None. Falling off the end of a function also returns None.
 
-#Default Argument Values
+
 
 name = "semutenga"
 print(name.replace("se", "mi"))#doesn't change the actual name string(immutable) but creates a new string 
 print(name)
+
+#Default Argument Values
+
+def ask_me(name, age=18, trys=4):
+    while True:
+        elinya = input(name)
+        if elinya in ('emz', 'mimi', 'baibe'):
+            return "You are the one"
+        elif elinya in ('naa', 'n', 'nope'):
+            return "You are not the one"
+        trys -=1
+        if trys < 1:
+            #return
+            #raise ValueError('invalid user response')
+            return
+
+ask_me("please Insert name : ")
+
+#metasplot
+#harvester
+#The default value is evaluated only once. This makes a difference 
+# when the default is a mutable object such as a list, dictionary, or instances of most classes
+
+def f(a, L=[]):
+    L.append(a)
+    return L
+
+print(f(1))
+print(f(2))
+print(f(3))
+
+#If you don’t want the default to be shared between subsequent calls,
+#you can write the function like this instead:
+def f2(a, L=None):
+    L=[]
+    L.append(a)
+    return L
+
+print(f2(1))
+print(f2(2))
+print(f2(3))
