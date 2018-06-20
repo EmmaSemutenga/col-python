@@ -62,7 +62,18 @@ print(f2(1))
 print(f2(2))
 print(f2(3))
 
-#function key arguments
 def emz():
     name = "Jane"
 print(emz())#no return value but it will return None
+
+#function key arguments
+
+def keyargs(firstName, secondName, joiner = "and"):
+    print("Your firstname is: ", firstName, joiner, secondName)
+
+keyargs("semutenga", "emmanuel", "nnn")
+
+#In a function call, keyword arguments must follow positional arguments.
+#keyargs(joiner = "and", "semutenga", "emmanuel" ) SyntaxError: positional argument follows keyword argument
+keyargs("semutenga", "emmanuel", joiner = "and")
+keyargs(joiner = "and", secondName = "emmanuel", firstName = "semutenga")
