@@ -77,3 +77,36 @@ keyargs("semutenga", "emmanuel", "nnn")
 #keyargs(joiner = "and", "semutenga", "emmanuel" ) SyntaxError: positional argument follows keyword argument
 keyargs("semutenga", "emmanuel", joiner = "and")
 keyargs(joiner = "and", secondName = "emmanuel", firstName = "semutenga")
+
+#order is not important
+#No argument may receive a value more than once
+#When a final formal parameter of the form **name is present, it receives a dictionary
+#When a formal parameter of the form *name is present, it receives a turple
+#*name must occur before **name
+
+def cheeseshop(kind, *arguments, **keywords):
+    print("-- Do you have any", kind, "?")
+    print("-- I'm sorry, we're all out of", kind)
+    print(type(arguments))
+    for arg in arguments:
+        print(arg)
+    print("-" * 40)
+    print(type(keywords))
+    for kw in keywords:
+        print(kw, ":" ,keywords[kw])
+
+cheeseshop("Limburger", "It's very runny, sir.", "It's really very, VERY runny, sir.", shopkeeper="Michael Palin", client="John Cleese", sketch="Cheese Shop Sketch")
+
+#Arbitrary Argument Lists¶
+#a function can be called with an arbitrary(random) number of arguments. These arguments will be wrapped up in a tuple
+
+def write_multiple_items(file, separator, *args, elinya):
+    for a in args:
+        print("hey ", file, " am just here testing ", separator, elinya )
+
+write_multiple_items("file one", ":)", "Limburger", "It's very runny, sir.", "It's really very, VERY runny, sir.", elinya="sema")
+
+#Before the variable number of arguments, zero or more normal arguments may occur.
+#Normally, these variadic arguments will be last in the list of formal parameters, because they scoop up all remaining input arguments
+#  that are passed to the function. Any formal parameters which occur after the *args parameter are
+#  ‘keyword-only’ arguments, meaning that they can only be used as keywords rather than positional arguments
