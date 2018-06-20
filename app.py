@@ -41,7 +41,7 @@ ask_me("please Insert name : ")
 #metasplot
 #harvester
 #The default value is evaluated only once. This makes a difference 
-# when the default is a mutable object such as a list, dictionary, or instances of most classes
+# when the default is a mutable object such as a list, dictionary, or instances of most classes, the default to be shared between subsequent calls
 
 def f(a, L=[]):
     L.append(a)
@@ -63,3 +63,6 @@ print(f2(2))
 print(f2(3))
 
 #function key arguments
+def emz():
+    name = "Jane"
+print(emz())#no return value but it will return None
