@@ -110,3 +110,54 @@ write_multiple_items("file one", ":)", "Limburger", "It's very runny, sir.", "It
 #Normally, these variadic arguments will be last in the list of formal parameters, because they scoop up all remaining input arguments
 #  that are passed to the function. Any formal parameters which occur after the *args parameter are
 #  ‘keyword-only’ arguments, meaning that they can only be used as keywords rather than positional arguments
+
+#Unpacking Argument Lists¶
+#The reverse situation occurs when the arguments are already in a list or tuple but need 
+# to be unpacked for a function call requiring separate positional arguments.
+#  For instance, the built-in range() function expects separate start and stop arguments. 
+# If they are not available separately, write the function call with the *-operator to 
+# unpack the arguments out of a list or tuple:
+
+list(range(3, 6))            # normal call with separate arguments
+
+args = [3, 6]
+list(range(*args))            # call with arguments unpacked from a list
+
+def kokya(ages):
+    for i, age in enumerate(ages):
+        print(f"student {i} is {age} years")
+
+choices = [2,8]
+kokya(list(range(*choices)))
+
+#In the same fashion, dictionaries can deliver keyword arguments with the **-operator:
+
+def parrot(voltage, state='a stiff', action='voom'):
+    print("-- This parrot wouldn't", action, end=' ')
+    print("if you put", voltage, "volts through it.", end=' ')
+    print("E's", state, "!")
+
+d = {"voltage": "four million", "state": "bleedin' demised", "action": "VOOM"}
+parrot(**d)
+
+#Lambda Expressions
+#Small anonymous functions can be created with the lambda keyword. 
+
+#Documentation Strings
+#The first line should always be a short, concise summary of the object’s purpose.
+#This line should begin with a capital letter and end with a period.
+#If there are more lines in the documentation string, the second line should be blank, 
+#visually separating the summary from the rest of the description. The following lines
+#should be one or more paragraphs describing the object’s calling conventions, its side effects, etc
+#multiline doc string
+
+def my_function():
+    """Do nothing, but document it.
+
+    No, really, it doesn't do anything.
+    """
+    pass
+
+print(my_function.__doc__)
+
+#Function Annotations¶
