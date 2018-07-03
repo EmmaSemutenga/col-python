@@ -41,11 +41,14 @@ for w in words:
 #If you need to modify the sequence you are iterating over while inside the loop 
 # (for example to duplicate selected items), 
 # it is recommended that you first make a copy
-
+longer = 0
+nuWords = []
 for w in words[:]:#making a copy
-    if len(w) > 6:
-        words.insert(0, w)
-print(words)
+    if len(w) > longer:
+        longer = len(w)
+        nuWords.insert(0, w)
+print(nuWords)
+
 
 #range() Function
 #iterates over a sequence of numbers
@@ -53,7 +56,7 @@ for i in range(6):#last number(given endpoint) is never part of the sequence
     print(i)
 
 #let range start from another number
-for n in range(-5, 2):#begins at -5
+for n in range(-5, 2):#begins at -5 to 2(not included)
     print(n)
 
 for m in range(0, 10, 2):#starts at 0 to 10(not included) in steps of 2
