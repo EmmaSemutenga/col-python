@@ -60,3 +60,23 @@ print(myList)
 print(myList.pop(3)) #will remove the item at position specified
 
 print(myList)
+
+#list.clear()
+#Remove all items from the list. Equivalent to del a[:].
+
+#myList.clear()
+
+#list.index(x[, start[, end]])
+#Return zero-based index in the list of the first item whose value is x. Raises a ValueError if there is no such item.
+
+print(myList.index(993, 0, len(myList)))
+print(myList)
+
+#Return the number of times x appears in the list.
+print(myList.count(5))
+
+#Sort the items of the list in place (the arguments can be used for sort customization, see sorted() for their explanation).
+#myList.sort(key=None, reverse=False)
+
+#list.reverse()
+#list.copy()
