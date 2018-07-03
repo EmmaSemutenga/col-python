@@ -5,7 +5,7 @@ squares = [1, 4, 9, 16, 25]
 
 #All slice operations return a new list containing the requested elements
 
-squares[:] #returns shallow copy of list in question
+squares[:] #returns shallow copy of list in question list.copy() does the same job
 
 #Lists also support operations like concatenation:
 
@@ -37,7 +37,7 @@ print(squares)
 
 
 #removing all elements
-squares[:] = []
+squares[:] = [] #list.clear() does the same job
 
 print(squares)
 
