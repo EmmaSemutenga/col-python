@@ -80,3 +80,24 @@ print(myList.count(5))
 
 #list.reverse()
 #list.copy()
+
+#using lists as stacks (last in first out by using .appen() and .pop() respectively)
+
+#using Lists as queues (first in first out), lists are not efficient for this purpose i.e doing inserts and pops at the begining is slow
+
+
+#To implement a queue, use collections.deque which was designed to have fast appends and pops from both ends.
+
+from collections import deque
+
+queue = deque(["Eric", "John", "Michael"])
+queue.append("Terry")           # Terry arrives
+queue.append("Graham")          # Graham arrives
+queue.popleft()                 # The first to arrive now leaves
+
+queue.popleft()                 # The second to arrive now leaves
+queue.pop()
+
+print(list(queue))                           # Remaining queue in order of arrival, also coverted it into a list
+
+#List comprehensions
