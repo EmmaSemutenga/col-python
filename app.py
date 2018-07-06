@@ -10,11 +10,13 @@ def fib(n):    # write Fibonacci series up to n
 # Now call the function we just defined:
 print(fib(2000))#will return None
 
+if fib(2000) == None:
+    print("indeed, it actually returns nothing")
+
 #even functions without a return statement do return a value called None
 
 #The return statement returns with a value from a function. return without an expression 
 #argument returns None. Falling off the end of a function also returns None.
-
 
 
 name = "semutenga"
@@ -34,12 +36,10 @@ def ask_me(name, age=18, trys=4):
         if trys < 1:
             #return
             #raise ValueError('invalid user response')
-            return
+            return #will cause function to exit with None return type
 
 ask_me("please Insert name : ")
 
-#metasplot
-#harvester
 #The default value is evaluated only once. This makes a difference 
 # when the default is a mutable object such as a list, dictionary, or instances of most classes, the default to be shared between subsequent calls
 
@@ -102,7 +102,7 @@ cheeseshop("Limburger", "It's very runny, sir.", "It's really very, VERY runny, 
 
 def write_multiple_items(file, separator, *args, elinya):
     for a in args:
-        print("hey ", file, " am just here testing ", separator, elinya )
+        print("hey ", file, " am just here testing ", separator, elinya, " and its ",a )
 
 write_multiple_items("file one", ":)", "Limburger", "It's very runny, sir.", "It's really very, VERY runny, sir.", elinya="sema")
 
@@ -121,7 +121,7 @@ write_multiple_items("file one", ":)", "Limburger", "It's very runny, sir.", "It
 list(range(3, 6))            # normal call with separate arguments
 
 args = [3, 6]
-list(range(*args))            # call with arguments unpacked from a list
+print(list(range(*args)))            # call with arguments unpacked from a list
 
 def kokya(ages):
     for i, age in enumerate(ages):
