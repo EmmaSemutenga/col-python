@@ -20,7 +20,7 @@ myList.extend((993,34343,3434,343))
 print(myList)
 
 #for a dictionary
-myList.extend({"name":"Sema", "last":"Emma"})
+myList.extend({"name":"Sema", "last":"Emma"})#only adds keys of the dict
 print(myList)
 
 #just trying out
@@ -53,11 +53,11 @@ print(myList)
 # in the Python Library Reference.
 #also returns the value that has been removed
 
-myList.pop() #will remove the last item since position has not been specified
+myList.pop() #will remove and return the last item since position has not been specified
 
 print(myList)
 
-print(myList.pop(3)) #will remove the item at position specified
+print(myList.pop(3)) #will remove and return the item at position specified
 
 print(myList)
 
